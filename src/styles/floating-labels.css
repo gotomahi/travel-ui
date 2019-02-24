@@ -1,0 +1,75 @@
+:root {
+  --input-padding-x: 3%;
+  --input-padding-y: 3%;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.form-label-group > input,
+.form-label-group > select,
+.form-label-group > textarea,
+.form-label-group > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+
+input:focus ~ .right-floating-label,
+input:focus ~ .left-floating-label,
+input:not(:focus):valid ~ .currency{
+  opacity: 1;
+}
+
+.top-left-floating-label {
+  position: absolute;
+  top: 20px;
+  padding-left: 10%;
+  color: #495057;
+  font-size: 13px;
+  display: block;
+  /*left: 0;
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+  */
+}
+
+.right-floating-label {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  padding: 20px;
+  background-color: #343a40;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.left-floating-label {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  bottom: 0px;
+  padding: 3%;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+input:focus ~ .top-left-floating-label,
+input:not(:focus):valid ~ .top-left-floating-label,
+input:focus ~ .right-floating-label,
+input:not(:focus):valid ~ .right-floating-label{
+  font-size: 11px;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: 0.2ms;
+  top: 2%;
+  left: 2%;
+}

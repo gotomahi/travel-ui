@@ -1,0 +1,33 @@
+<div class="row p-md-5">
+  <div class="col-md-5">
+    <div class="row padding-5"><span>Call us on <b>019080 49964</b></span></div>
+    <div class="row padding-5"><span>Send email to <b>queries@mgtechno.co.uk</b></span></div>
+  </div>
+  <div class="col-md-4">
+    <form #welcomeFrom="ngForm" class="padding-5 box-10 " (submit)="sendEmail()">
+
+      <div class="form-label-group mb-md-3">
+        <input id="name" type="text" [(ngModel)]="name" name="name" required>
+        <span class="top-left-floating-label">Full name</span>
+      </div>
+      <div class="form-label-group mb-md-3">
+        <input id="destination" type="text" [(ngModel)]="email" name="email" required>
+        <span class="top-left-floating-label">E-Mail</span>
+      </div>
+      <div class="mb-md-3 form-label-group">
+        <select id="queryType" type="text" [(ngModel)]="queryType" name="queryType" required>
+          <option value="General" selected>General</option>
+          <option value="Sales">Sales</option>
+          <option value="Technical">Technical</option>
+        </select>
+      </div>
+      <div class="form-label-group">
+        <textarea id="query" [(ngModel)]="query" name="query" required rows="5"></textarea>
+        <span class="top-left-floating-label">Type your query</span>
+      </div>
+      <div class=" offset-4">
+        <button type="submit" class="btn btn-success" [disabled]="!welcomeFrom.form.valid">Send Query</button>
+      </div>
+    </form>
+  </div>
+</div>

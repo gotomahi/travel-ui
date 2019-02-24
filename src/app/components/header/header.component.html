@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">MG Techno Ltd</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="navbar-nav">
+      <li *ngIf="loggedIn"><a routerLink="/home" class="nav-link" routerLinkActive="Active">Dashboard</a></li>
+    </ul>
+    <ul class="navbar-nav offset-8">
+      <li><a routerLink="/howitworks" class="nav-link" routerLinkActive="Active">How it's works</a></li>
+      <li><a routerLink="/contactus" class="nav-link" routerLinkActive="Active">Contact Us</a></li>
+      <li *ngIf="!loggedIn"><a routerLink="/login" class="nav-link" routerLinkActive="Active">Login</a></li>
+      <li *ngIf="!loggedIn"><a routerLink="/signup" class="nav-link" routerLinkActive="Active">Sign Up</a></li>
+      <li *ngIf="loggedIn"><a routerLink="/logout" class="nav-link" routerLinkActive="Active">Logout</a></li>
+    </ul>
+  </div>
+</nav>

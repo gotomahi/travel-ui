@@ -1,0 +1,45 @@
+<div class="p-3 pb-md-3">
+  <form #signupForm="ngForm">
+    <div class="row form-label-group mb-3">
+      <span class="col-md-3">Already have an account?<a routerLink="/login" class="ml-2">Login</a></span>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-5">
+        <input id="radio-personal" type="radio" name="accountType" [(ngModel)]="accountType" value="Personal">
+        <label for="radio-personal" class="radio-label col-md-2">Personal</label>
+        <input id="radio-business" type="radio" name="accountType" [(ngModel)]="accountType" value="Business">
+        <label for="radio-business" class="radio-label col-md-2">Business</label>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="form-label-group col-md-3">
+        <input id="firstName" type="text" [(ngModel)]="firstName" name="firstName" required>
+        <span class="top-left-floating-label">First name</span>
+      </div>
+      <div class="form-label-group offset-1 col-md-3">
+        <input id="lastName" type="text" [(ngModel)]="lastName" name="lastName" required>
+        <span  class="top-left-floating-label">Last name</span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-3 form-label-group">
+        <input id="email" type="text" [(ngModel)]="email" name="email" required>
+        <span class="top-left-floating-label">Email</span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="form-label-group col-md-3">
+        <input id="password" type="password" [(ngModel)]="password" name="password" required>
+        <span class="top-left-floating-label">Password</span>
+      </div>
+      <div class="form-label-group offset-1 col-md-3">
+        <input id="confirmPassword" type="password" [(ngModel)]="confirmPassword"
+               name="confirmPassword" required>
+        <span class="top-left-floating-label">Confirm password</span>
+      </div>
+    </div>
+    <div class="row m-md-3">
+      <button type="button" class="btn btn-success offset-2 col-md-1" (click)="register()">Register</button>
+    </div>
+  </form>
+</div>

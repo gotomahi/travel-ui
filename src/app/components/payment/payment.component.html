@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <form #paymentForm="ngForm" (submit)="confirm()">
+    <div class="row">
+      <label class="m-md-2">Transfer type: </label>
+      <div [(ngModel)]="transaction.transferType" ngbRadioGroup name="radioBasic" class="col-md-9">
+        <label ngbButtonLabel class="btn-secondary col-md-3 m-1"><input ngbButton type="radio" class="col-md-3" value="Bank">Bank Transfer</label>
+        <label ngbButtonLabel class="btn-secondary col-md-3 m-1"><input ngbButton type="radio" class="col-md-3" value="DebitCard">Personal Debit Card</label>
+        <label ngbButtonLabel class="btn-secondary col-md-3 m-1"><input ngbButton type="radio" class="col-md-3" value="CreditCard">Personal Credit Card</label>
+      </div>
+    </div>
+    <div *ngIf="transaction.transferType == 'Bank'">
+      <h5>Bank Transfer</h5>
+      <p>In order to process your payment you’ll need to make a bank transfer to our bank account. We’ll process the transaction as soon as we receive your money.</p>
+      <p>Are the funds coming from your personal account or company account? (Your account name needs to match with your registration name on <<>>.)</p>
+    </div>
+    <div *ngIf="transaction.transferType != 'Bank'">
+      <p>Depending on the country you are paying from, a card surcharge may apply. These are 3rdparty charges out of our control.
+        We’ve recently partnered with JudoPay for card processing. This will require you to enter your previously stored card details again. We apologise for any inconvenience this may cause in the short term, but assure you that this good practice will continue to ensure we are providing maximum security against fraud where possible.</p>
+      <div class="form-label-group col-md-4">
+        <label for="cc-number">Card number</label>
+        <input id="cc-number" type="tel" autocomplete="cc-number" ccNum [(ngModel)]="cardNumber" name="cardNumber" required>
+      </div>
+      <div class="form-label-group col-md-2">
+        <label for="cc-exp">Card expiry</label>
+        <input id="cc-exp" type="tel" autocomplete="cc-exp" ccExp [(ngModel)]="expiryMonth" name="expiryMonth" required>
+      </div>
+      <div class="form-label-group col-md-2">
+        <label for="cc-cvc">CVC</label>
+        <input id="cc-cvc" type="tel" autocomplete="cc-cvc" [(ngModel)]="cvc" name="cvc" ccCvc required>
+      </div>
+    </div>
+    <button type="submit" class="col-md-2" [disabled]="!paymentForm.form.valid">Confirm</button>
+  </form>
+</div>
