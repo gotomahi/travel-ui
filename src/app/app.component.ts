@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-    this.router.navigate(['welcome'], {skipLocationChange: true});
+    this.router.navigate(['product'], {skipLocationChange: true});
   }
 
 }

@@ -42,7 +42,7 @@ const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'welcome', component: WelcomeComponent},
+  {path: 'product', component: WelcomeComponent},
   {path: 'contactus', component: ContactusComponent},
   {path: 'howitworks', component: HowitworksComponent},
   {path: 'privacy', component: PrivacyComponent},
